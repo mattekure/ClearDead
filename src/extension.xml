@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root version="3.0">
+  <announcement text="Clear Dead v4" font="emotefont" />
+  <properties>
+    <name>Clear Dead</name>
+    <version>4</version>
+    <author>mattekure</author>
+    <description>Single click to remove dead NPCs from the CT.</description>
+    <loadorder>250</loadorder>
+    <ruleset>
+      <name>5E</name>
+    </ruleset>
+    <ruleset>
+      <name>4E</name>
+    </ruleset>
+    <ruleset>
+      <name>3.5E</name>
+    </ruleset>
+    <ruleset>
+      <name>PFRPG</name>
+    </ruleset>
+    <ruleset>
+      <name>PFRPG2</name>
+    </ruleset>
+    <ruleset>
+      <name>2E</name>
+    </ruleset>
+  </properties>
+  <base>
+    <includefile source="combattracker_host.xml" />
+    <includefile source="strings_Clear Dead.xml" />
+  </base>
+</root>
