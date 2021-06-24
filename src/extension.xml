@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <root version="3.0">
-  <announcement text="Clear Dead v4" font="emotefont" />
+  <announcement text="Clear Dead v5" font="emotefont" />
   <properties>
     <name>Clear Dead</name>
-    <version>4</version>
+    <version>5</version>
     <author>mattekure</author>
     <description>Single click to remove dead NPCs from the CT.</description>
     <loadorder>250</loadorder>
@@ -29,5 +29,6 @@
   <base>
     <includefile source="combattracker_host.xml" />
     <includefile source="strings_Clear Dead.xml" />
+    <script name="ClearDead" file="ClearDead.lua" />
   </base>
 </root>
