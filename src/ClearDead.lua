@@ -43,6 +43,11 @@ function isDead(nNode)
         if sStatus == "Dead" or sStatus == "Dying" then
             return true;
         end
+    elseif Session.RulesetName == "OSE2" then
+        _, sStatus = manager_actor_OSE.getWoundPercent(nNode);
+        if sStatus == "Dead" or sStatus == "Dying" then
+            return true;
+        end
     end
     return false;
 end
