@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <root>
-  <string name="combattracker_host_ClearDead_Tooltip">Remove Dead NPCs</string>
+  <string name="combattracker_host_ClearDead_Tooltip">Remove Dead Hostile NPCs</string>
+  <string name="combattracker_host_ClearDead_Tooltipall">Remove All Dead NPCs</string>
 </root>

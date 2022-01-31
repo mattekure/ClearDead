@@ -2,65 +2,34 @@
 <root>
   <windowclass name="combattracker_host" merge="join">
     <sheetdata>
-      <buttoncontrol name="ClearDead">
-        <!-- <bounds>250,-49,-130,20</bounds> -->
-        <anchored height="20" width="20">
-            <bottom offset="-28" />
-            <left anchor="center" offset="50" />
-        </anchored>
-        <tooltip textres="combattracker_host_ClearDead_Tooltip" />
-        <icon normal="button_deleteconfirm" />
-        <font>button-white</font>
-        <script>
-
-function onButtonPress()
-    local nCombatants = CombatManager.getCombatantNodes();
-    local sRuleset = User.getRulesetName();
-    for _,v in pairs(nCombatants) do
-        local sType, nNode = ActorManager.getTypeAndNode(v)
-        local sFaction = ActorManager.getFaction(v)
-        if sType == "ct" and sFaction == "foe" and isDead(nNode) then
-            DB.deleteNode(nNode);
-        end
-    end
-end
-
-
-
-
-function isDead(nNode)
-    local sRuleset = User.getRulesetName();
-    if  sRuleset == "5E" then
-        local nWounded, sStatus = ActorManager5E.getWoundPercent(nNode);
-        if sStatus == "Dead" or sStatus == "Dying" then
-            return true;
-        end
-    elseif sRuleset == "4E" then
-        local nWounded, sStatus = ActorManager4E.getWoundPercent(nNode);
-        if sStatus == "Dead" or sStatus == "Dying" then
-            return true;
-        end
-    elseif sRuleset == "3.5E" then
-        local nNonLethal, sStatus, nLethal = ActorManager35E.getWoundPercent(nNode);
-        if sStatus == "Dead" or sStatus == "Dying" then
-            return true;
-        end
-    elseif sRuleset == "PFRPG" then
-        local nNonLethal, sStatus, nLethal = ActorManager35E.getWoundPercent(nNode);
-        if sStatus == "Dead" or sStatus == "Dying" then
-            return true;
-        end
-      elseif sRuleset == "PFRPG2" then
-        local nNonLethal, sStatus, nLethal = ActorManager2.getWoundPercent(nNode);
-        Debug.console(nNonLethal, sStatus, nLethal)
-        if sStatus == "Dead" or sStatus == "Dying" then
-            return true;
-        end
-    end
-    return false;
-end
-</script>
-      </buttoncontrol>
+        <buttoncontrol name="ClearDeadFoe">
+            <anchored height="20" width="20">
+                <bottom offset="-28" />
+                <left anchor="center" offset="50" />
+            </anchored>
+            <tooltip textres="combattracker_host_ClearDead_Tooltip" />
+            <icon normal="button_deleteconfirm" />
+            <font>button-white</font>
+            <script>
+                function onButtonPress()
+                    ClearDead.clearCTDead("foe")
+                end
+            </script>
+        </buttoncontrol>
+        <buttoncontrol name="ClearDeadAll">
+            <anchored height="20" width="20">
+                <bottom offset="-28" />
+                <left anchor="center" offset="75" />
+            </anchored>
+            <tooltip textres="combattracker_host_ClearDead_Tooltipall" />
+            <icon normal="button_edit" />
+            <font>button-white</font>
+            <script>
+                function onButtonPress()
+                    ClearDead.clearCTDead("all")
+                end
+            </script>
+        </buttoncontrol>
     </sheetdata>
   </windowclass>
 </root>
