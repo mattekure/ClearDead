@@ -1,5 +1,6 @@
 function clearCTDead(sClearType)
     local nCombatants = CombatManager.getCombatantNodes();
+    local nCurrentInit = CombatManager.getActiveCT();
     for _, v in pairs(nCombatants) do
         local sType, nNode = ActorManager.getTypeAndNode(v)
         local sFaction = ActorManager.getFaction(v)
@@ -8,6 +9,9 @@ function clearCTDead(sClearType)
             bDelete = true;
         end
         if sType == "ct" and bDelete and isDead(nNode) then
+            if v == nCurrentInit then
+                CombatManager.nextActor(true, false)
+            end
             DB.deleteNode(nNode);
         end
     end
