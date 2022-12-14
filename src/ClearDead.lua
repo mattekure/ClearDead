@@ -9,15 +9,23 @@ function clearCTDead(sClearType)
             bDelete = true;
         end
         if sType == "ct" and bDelete and isDead(nNode) then
-            if v == nCurrentInit then
-                CombatManager.nextActor(true, false)
-            end
-            DB.deleteNode(nNode);
+            delCTEntry(nNode, nCurrentInit)
         end
     end
 end
 
+function delCTEntry(nNode, nCurrentInit)
+    if not nNode then
+        return;
+    end
+    DB.deleteChildren(nNode, "effects");
+    DB.setValue(nNode, "wounds", "number", 0);
+    if nNode == nCurrentInit then
+        CombatManager.nextActor();
+    end
+    nNode.delete()
 
+end
 
 
 function isDead(nNode)
