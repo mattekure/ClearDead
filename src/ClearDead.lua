@@ -24,9 +24,7 @@ function delCTEntry(nNode, nCurrentInit)
         CombatManager.nextActor();
     end
     nNode.delete()
-
 end
-
 
 function isDead(nNode)
     local sStatus = "";
@@ -57,6 +55,16 @@ function isDead(nNode)
         end
     elseif Session.RulesetName == "OSE2" then
         _, sStatus = manager_actor_OSE.getWoundPercent(nNode);
+        if sStatus == "Dead" or sStatus == "Dying" then
+            return true;
+        end
+    elseif Session.RulesetName == "DCC RPG" then
+        _, sStatus = ActorManagerDCC.getWoundPercent(nNode);
+        if sStatus == "Dead" or sStatus == "Dying" then
+            return true;
+        end
+    elseif Session.RulesetName == "MCC RPG" then
+        _, sStatus = ActorManagerMCC.getWoundPercent(nNode);
         if sStatus == "Dead" or sStatus == "Dying" then
             return true;
         end
