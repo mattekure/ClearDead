@@ -1,35 +1,35 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <root>
-  <windowclass name="combattracker_host" merge="join">
-    <sheetdata>
-        <buttoncontrol name="ClearDeadFoe">
-            <anchored height="20" width="20">
-                <bottom offset="-28" />
-                <left anchor="center" offset="50" />
-            </anchored>
-            <tooltip textres="combattracker_host_ClearDead_Tooltip" />
-            <icon normal="button_deleteconfirm" />
-            <font>button-white</font>
-            <script>
+    <windowclass merge="join" name="combattracker_host">
+        <sheetdata>
+            <buttoncontrol name="ClearDeadFoe">
+                <anchored height="20" width="20">
+                    <bottom offset="-28"/>
+                    <left anchor="center" offset="50"/>
+                </anchored>
+                <tooltip textres="combattracker_host_ClearDead_Tooltip"/>
+                <icon normal="button_deleteconfirm"/>
+                <font>button-white</font>
+                <script>
                 function onButtonPress()
                     ClearDead.clearCTDead("foe")
                 end
             </script>
-        </buttoncontrol>
-        <buttoncontrol name="ClearDeadAll">
-            <anchored height="20" width="20">
-                <bottom offset="-28" />
-                <left anchor="center" offset="75" />
-            </anchored>
-            <tooltip textres="combattracker_host_ClearDead_Tooltipall" />
-            <icon normal="button_edit" />
-            <font>button-white</font>
-            <script>
+            </buttoncontrol>
+            <buttoncontrol name="ClearDeadAll">
+                <anchored height="20" width="20">
+                    <bottom offset="-28"/>
+                    <left anchor="center" offset="75"/>
+                </anchored>
+                <tooltip textres="combattracker_host_ClearDead_Tooltipall"/>
+                <icon normal="button_edit"/>
+                <font>button-white</font>
+                <script>
                 function onButtonPress()
                     ClearDead.clearCTDead("all")
                 end
             </script>
-        </buttoncontrol>
-    </sheetdata>
-  </windowclass>
+            </buttoncontrol>
+        </sheetdata>
+    </windowclass>
 </root>

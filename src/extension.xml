@@ -1,50 +1,22 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <root version="3.0">
     <announcement>
-        <text>Clear Dead v9.1\rCreated by mattekure</text>
+        <text>Clear Dead v9.2\rCreated by mattekure 2024-02-05</text>
         <font>systemfont</font>
         <icon>Mattekure_Logo</icon>
     </announcement>
-
     <properties>
         <name>Feature: Clear Dead</name>
-        <version>9.1</version>
+        <version>9.2</version>
         <author>mattekure</author>
         <description>Single click to remove dead NPCs from the CT.</description>
         <loadorder>250</loadorder>
-        <ruleset>
-            <name>5E</name>
-        </ruleset>
-        <ruleset>
-            <name>4E</name>
-        </ruleset>
-        <ruleset>
-            <name>3.5E</name>
-        </ruleset>
-        <ruleset>
-            <name>PFRPG</name>
-        </ruleset>
-        <ruleset>
-            <name>PFRPG2</name>
-        </ruleset>
-        <ruleset>
-            <name>2E</name>
-        </ruleset>
-        <ruleset>
-            <name>OSE2</name>
-        </ruleset>
-        <ruleset>
-            <name>DCC RPG</name>
-        </ruleset>
-        <ruleset>>
-            <name>MCC RPG</name>
-        </ruleset>
     </properties>
     <base>
-        <includefile source="combattracker_host.xml" />
-        <script name="ClearDead" file="ClearDead.lua" />
+        <includefile source="combattracker_host.xml"/>
+        <script file="ClearDead.lua" name="ClearDead"/>
         <string name="combattracker_host_ClearDead_Tooltip">Remove Dead Hostile NPCs</string>
         <string name="combattracker_host_ClearDead_Tooltipall">Remove All Dead NPCs</string>
-        <icon name="Mattekure_Logo" file="Mattekure_Logo.png" />
+        <icon file="Mattekure_Logo.png" name="Mattekure_Logo"/>
     </base>
 </root>
